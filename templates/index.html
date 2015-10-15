@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title></title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/js/materialize.min.js"></script>
+
+
+    {% load staticfiles %}
+
+    <script src="{% static 'waves.min.js' %}"></script>
+    <script src="{% static 'jquery.smooth-scroll.js' %}"></script>
+
+    <script src="http://malsup.github.com/jquery.form.js"></script> 
+
+
+</head>
+<body>
+
+    <div class="row">
+    <div class="col s12 blue lighten-4 valign-wrapper" style="height: 600px;">
+
+    <div class="container valign">
+    
+        <h2 class="center-align" style="margin-bottom: 50px;">Find any email!</h2>
+
+        <div class="row">
+            <div class="col s4 offset-s4">
+                <input id="search_field" readonly placeholder="Alvin" type="text" class="validate">
+
+                <!-- 
+                <a class="waves-effect waves-teal btn-flat"><i class="material-icons">search</i></a>
+                
+
+                waves-effect waves-light 
+                -->
+
+            </div>
+            <div class="col s1">
+                <a style="margin-top: 10px;" id="search-btn" class="search btn-floating transparent"><i class="material-icons">search</i></a>
+            </div>
+        </div>
+
+    </div>
+
+    </div>
+        
+        <a style="position: absolute; bottom: 60px; right: 50px;" id="link-down" class="btn-floating btn-large waves-effect waves-light blue lighten-2" href="#last_name"><i class="fa fa-chevron-down"></i></a>
+
+    </div> <!-- /.row -->
+
+    <div class="container">
+        <div class="row">
+        
+            <form class="col s12" id="myForm" action="/form/" method="post">
+            {% csrf_token %}
+                
+                <div class="row">
+                
+                    {% for field in form %}
+                        <div class="person-form-field input-field col s6 offset-s3">
+                            {{ field.errors }}
+                            {{ field }}
+                            {{ field.label_tag }}
+                        </div>
+                    {% endfor %}
+
+                    <div class="col s6 offset-s3">
+                        <button type="submit" value="Create" class="waves-effect waves-light btn">Submit</button>
+                    </div>
+
+
+<!--
+                    <div class="input-field col s6 offset-s3">
+                        <input id="last_name" class="validate" type="text">
+                        <label for="last_name">Last Name</label>
+                    </div>
+
+                    <div class="input-field col s6 offset-s3">
+                        <input type="text" class="validate">
+                        <label>Last Name</label>
+                    </div>
+
+                    <div class="input-field col s6 offset-s3">
+                        <input type="text" class="validate">
+                        <label>Last Name</label>
+                    </div>
+
+                    <div class="input-field col s6 offset-s3">
+                        <input type="text" class="validate">
+                        <label>Last Name</label>
+                    </div>
+
+                    <div class="input-field col s6 offset-s3">
+                        <input type="text" class="validate">
+                        <label>Last Name</label>
+                    </div>
+
+                    <div class="input-field col s6 offset-s3">
+                        <input type="text" class="validate">
+                        <label>Last Name</label>
+                    </div>
+-->
+
+
+
+
+
+
+
+                </div>
+            </form>
+
+        </div>
+    </div>
+
+    <style type="text/css">
+
+        #search_field{
+            border-bottom: 1px solid #26a69a;
+            box-shadow: 0 1px 0 0 #26a69a;
+        }
+
+        .person-form-field {
+            margin-bottom: 20px;
+        }
+
+        .person-form-field label{
+            width: 100%;
+        }
+
+        input[type=text]+label:after, input[type=password]+label:after, input[type=email]+label:after, input[type=url]+label:after, input[type=time]+label:after, input[type=date]+label:after, input[type=datetime-local]+label:after, input[type=tel]+label:after, input[type=number]+label:after, input[type=search]+label:after, textarea.materialize-textarea+label:after{
+
+                top: 50px;
+        }
+
+        input[type=text], input[type=password], input[type=email], input[type=url], input[type=time], input[type=date], input[type=datetime-local], input[type=tel], input[type=number], input[type=search], textarea.materialize-textarea{
+                height: 2rem;
+        }
+
+    </style>
+
+    <script> 
+        // wait for the DOM to be loaded 
+        $(document).ready(function() { 
+            
+            // bind 'myForm' and provide a simple callback function 
+            $('#myForm1').ajaxForm(function(data) { 
+                alert(data); 
+            });
+
+            $('#search-btn').click(function() {
+                window.location.href = "/search";
+            });
+
+
+            // prepare Options Object for plugin
+            var options = {
+                success: function(data) {
+                    Materialize.toast("Thank you!", 5000);
+                },
+                error:  function(resp) {
+                    //$("#form_ajax_error").show();
+
+                    // render errors in form fields
+                    var errors = JSON.parse(resp.responseText);
+                    for (error in errors) {
+                        var id = 'label[for=id_' + error + ']';
+                        $(id).attr('data-error', $(errors[error]).text());
+                        $(id).addClass('active');
+                        $(id).siblings().addClass('invalid');
+                    }
+                    
+                    /*
+                    setTimeout(function() {
+                        $("#form_ajax_error").hide();
+                    }, 5000);
+                    */
+                }
+            };
+
+            $('#myForm').ajaxForm(options);
+        
+        }); 
+    </script> 
+
+    <script type="text/javascript">
+
+        $('#link-down').smoothScroll();
+
+
+        //Waves.attach('.search', ['waves-circle', 'waves-float']);
+
+        Waves.attach('.search', ['waves-circle', 'waves-float']);
+
+
+        var text = "TechCrunch.com";
+        var n = 0;
+
+        var options = {
+            wait: 800, //ms
+            
+            /*
+            position: { // This position relative to HTML element.
+                x: 20, //px
+                y: 20  //px
+            },
+            */
+        };
+
+        function tick() {
+            Waves.ripple('.search', options);
+            timerId = setTimeout(tick, 1500);
+        }
+
+        function writeChar() {
+
+            if(n >= text.length){
+                clearInterval(timerWrite);
+                setTimeout(writeStart, 500);
+            }
+            else{
+                document.getElementById("search_field").value += text.charAt(n);
+                n += 1;
+            }
+
+        }
+
+        function writeStart () {
+            document.getElementById("search_field").value = '';
+            timerWrite = setInterval("writeChar()", 100);
+            n = 0;
+        }
+
+        tick();
+        writeStart();
+
+
+        var options = [ 
+            {selector: '#staggered-test', offset: 50, callback: 'Materialize.toast("This is our ScrollFire Demo!", 1500 )'}, 
+            {selector: '#staggered-test', offset: 205, callback: 'Materialize.toast("Please continue scrolling!", 1500 )' }, 
+            {selector: '#staggered-test', offset: 400, callback: 'Materialize.showStaggeredList("#staggered-test")' }, 
+            {selector: '#image-test', offset: 500, callback: 'Materialize.fadeInImage("#image-test")' } 
+        ];
+
+        Materialize.scrollFire(options);
+
+    
+    </script>
+
+</body>
+</html>
+

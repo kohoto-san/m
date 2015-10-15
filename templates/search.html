@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title></title>
+
+  	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/css/materialize.min.css">
+  	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/js/materialize.min.js"></script>
+
+    {% load staticfiles %}
+
+	<link rel="stylesheet" href="{% static 'timeline.css' %}">
+
+</head>
+<body class="light-blue lighten-4">
+
+	<div class="row">
+	<div class="col s12">
+
+	<div class="container">
+	
+		<div class="row">
+    		<div class="col s4 offset-s4">
+      			<input value="TechCrunch.com" readonly type="text" class="validate">
+
+      			<!-- 
+      			<a class="waves-effect waves-teal btn-flat"><i class="material-icons">search</i></a>
+      			-->
+
+    		</div>
+    		<div class="col s1">
+      			<a style="margin-top: 10px;" class="btn-floating waves-effect waves-light transparent"><i class="material-icons">search</i></a>
+    		</div>
+  		</div>
+		<!-- /.search -->
+
+		<div class="row">
+		<div class="col l10 offset-l1 m12">
+		
+			<div id="scroll1" class="row">
+
+				<div class="col m2 s12">
+            		<img class="company-card-img" style="height: 100px;" src="https://d2ojpxxtu63wzl.cloudfront.net/static/7a9e165e3fece3f02ec29efa31693e86_b3af8e8f5ff18189c5213da888d83be6e5fa6bfc8997b99ee1e2cfb35d83607c">
+				</div>
+			
+				<div class="col m5 s12">
+					<div class="company-card-info card-panel grey lighten-5 z-depth-1">
+            			<p> <i class="material-icons">schedule</i> Founded: 2005 </p>
+						<p> <i class="material-icons">perm_identity</i> Employees ~150 </p>
+ 						<p> <i class="material-icons">location_on</i> Location: Boulder </p>
+					</div>
+				</div>
+
+				<div class="col m5 s12">
+					<div class="company-card-info company-card-right card-panel grey lighten-5 z-depth-1">
+            			<p> Global Rank 464 </p>
+						<p> Rank in US 376 </p>
+					</div>
+				</div>
+
+				<div class="col m5 s12">
+					<div class="valign-wrapper company-card-info company-card-right card-panel grey lighten-5 z-depth-1">
+						<img class="valign" src="https://d23ikhyr5c5bpx.cloudfront.net/images/social-icons/32/default/twitter.png">
+						<img class="valign" src="https://d23ikhyr5c5bpx.cloudfront.net/images/social-icons/32/default/twitter.png">
+
+					</div>
+				</div>
+
+			</div> <!-- /.row -->
+
+			
+			<div id="scroll2" class="card-panel grey lighten-5 z-depth-1">
+				<img class="company-card-soc" src="https://d23ikhyr5c5bpx.cloudfront.net/images/social-icons/32/default/twitter.png">
+				<span class="black-text company-card-soc company-card-soc-name">@sdsd</span>
+
+				<div class="row company-card-soc-stats">
+					<div class="col l2 m4">
+						<p class="stext-17">Tweets</p>
+						<p class="black-text"><b>100K</b></p>
+					</div>
+					<div class="col l2 m4">
+						<p class="stext-17">Following</p>
+						<p class="black-text"><b>100K</b></p>
+					</div>
+					<div class="col l2 m4">
+						<p class="stext-17">Followers</p>
+						<p class="black-text"><b>100K</b></p>
+					</div>
+				</div>
+
+				<p><i class="fa fa-quote-left"></i> <i>Breaking technology news, analysis, and opinions from TechCrunch. The number one guide for all things tech.</i> </p>
+			</div>
+
+			<div id="scroll3" class="card-panel grey lighten-5 z-depth-1">
+				<img class="company-card-soc" src="https://d23ikhyr5c5bpx.cloudfront.net/images/social-icons/32/default/facebook.png">
+				<span class="black-text company-card-soc company-card-soc-name">@sdsd</span>
+
+				<p class="stext-17 company-card-soc-stats" style="margin-bottom: 20px;">Likes: <b>1.89M </b> </p>
+
+				<p><i class="fa fa-quote-left"></i> <i>TechCrunch, founded on June 11, 2005, is a blog dedicated to obsessively profiling and reviewing new Internet products and companies. In addition to covering new companies, TechCrunch profiles existing companies that are making an impact (commercial and/or cultural) on the new web space. </i> </p>
+			</div>
+
+			
+
+			<ul class="collapsible popout" data-collapsible="expandable">
+    			<li>
+    			  	<div class="collapsible-header active">First</div>
+    			  	<div class="collapsible-body">
+
+    			  		<div class="container">
+						<div class="row">
+							
+							<div class="col m3 s12">
+								<img class="responsive-img" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMTQwIiBoZWlnaHQ9IjE0MCIgdmlld0JveD0iMCAwIDE0MCAxNDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzE0MHgxNDAKQ3JlYXRlZCB3aXRoIEhvbGRlci5qcyAyLjYuMC4KTGVhcm4gbW9yZSBhdCBodHRwOi8vaG9sZGVyanMuY29tCihjKSAyMDEyLTIwMTUgSXZhbiBNYWxvcGluc2t5IC0gaHR0cDovL2ltc2t5LmNvCi0tPjxkZWZzPjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+PCFbQ0RBVEFbI2hvbGRlcl8xNTAyMzUxOGMxMSB0ZXh0IHsgZmlsbDojQUFBQUFBO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1mYW1pbHk6QXJpYWwsIEhlbHZldGljYSwgT3BlbiBTYW5zLCBzYW5zLXNlcmlmLCBtb25vc3BhY2U7Zm9udC1zaXplOjEwcHQgfSBdXT48L3N0eWxlPjwvZGVmcz48ZyBpZD0iaG9sZGVyXzE1MDIzNTE4YzExIj48cmVjdCB3aWR0aD0iMTQwIiBoZWlnaHQ9IjE0MCIgZmlsbD0iI0VFRUVFRSIvPjxnPjx0ZXh0IHg9IjQ0LjA1NDY4NzUiIHk9Ijc0LjUiPjE0MHgxNDA8L3RleHQ+PC9nPjwvZz48L3N2Zz4=">
+							</div>
+
+							<div class="col m9 s12">
+								<p class="grey-text text-darken-3"><b>John Doe</b></p>
+								<p>Seo at Fullcontact Inc</p>
+								<p><i class="fa fa-map-marker"></i> Location: Boulder</p>
+								<p >Age: 34</p>
+							</div>
+
+							<div class="person-card-soc col s12">
+								<img src="https://d23ikhyr5c5bpx.cloudfront.net/images/social-icons/24/default/twitter.png">
+								<img src="https://d23ikhyr5c5bpx.cloudfront.net/images/social-icons/24/default/twitter.png">
+							</div>
+
+						</div> <!-- /.row -->
+
+							<p class="person-card-text grey-text text-darken-2"><i class="fa fa-quote-left"></i> <i>Born and raised in California and schooled in New York, I moved to Taipei in 2007 to find my roots. My emotional search came to a head at a roasted sweet yam vendor, where I ate so many root vegetables I nearly keeled over.</i> </p>
+
+							<section id="cd-timeline" class="cd-container">
+							
+								<div class="cd-timeline-block">
+									<div class="cd-timeline-img cd-picture"></div> <!-- cd-timeline-img -->
+
+									<div class="cd-timeline-content">
+										<p class="cd-date">Writer</p>
+										<p class="cd-company_name">TechCrunch</p>
+										<p>2012-11 to present</p>
+									</div> <!-- cd-timeline-content -->
+								</div> <!-- cd-timeline-block -->
+
+								<div class="cd-timeline-block">
+									<div class="cd-timeline-img cd-picture"></div> <!-- cd-timeline-img -->
+									
+									<div class="cd-timeline-content">
+										<p class="cd-date">Writer</p>
+										<p class="cd-company_name">TechCrunch</p>
+										<p>2012-11 to present</p>
+									</div> <!-- cd-timeline-content -->
+								</div> <!-- cd-timeline-block -->
+
+							</section> <!-- cd-timeline -->
+
+						</div> <!-- /.container -->
+
+    			  	</div>
+    			</li>
+    			<li>
+    			  	<div class="collapsible-header">Second</div>
+    			  	<div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+    			</li>
+    			<li>
+    			  	<div class="collapsible-header">Third</div>
+    			  	<div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+    			</li>
+  			</ul>
+
+
+		
+		</div>
+		</div> <!--- /.row body -->
+
+	</div> <!-- /.container -->
+	</div>
+	</div> <!-- /.row -->
+
+	<script type="text/javascript">
+
+		var options = [ 
+            {selector: '#scroll1', offset: 0, callback: 'Materialize.toast("Demo-1", 1500 )'},
+            {selector: '#scroll2', offset: 0, callback: 'Materialize.toast("Demo-1", 1500 )'},
+            {selector: '#scroll3', offset: 0, callback: 'Materialize.toast("Demo-1", 1500 )'},
+            {selector: '.collapsible', offset: 300, callback: 'Materialize.showStaggeredList(".collapsible")'}
+
+        ];
+
+        Materialize.scrollFire(options);
+
+	</script>
+
+	<style type="text/css">
+
+		.collapsible li{
+			opacity: 0;
+		}
+
+
+		.person-card-soc{
+			margin-top: 10px;
+		}
+
+		.person-card-soc img{
+			margin-right: 7px;
+		}
+
+		@media all and (min-width: 992px) {
+			.company-card-img{
+				margin: 7.5px 0 15px;
+			}
+		}
+
+		.person-card-text{
+			margin-top: 20px;
+		}
+
+		.collapsible-body{
+			padding-top: 30px;
+		}
+
+		.collapsible-body p {
+			padding: 0;
+		}
+
+		.company-card-soc-stats{
+			margin-top: -15px;
+		}
+
+		.stext-17{
+			font-size: 17px;
+		}
+
+		.company-card-info i{
+			vertical-align: bottom;
+		}
+
+		.company-card-right{
+			padding: 10px;
+ 	 		margin: 5px 0;
+		}
+
+		.company-card-right img{
+			margin-right: 7px;
+		}
+
+		.company-card-soc{
+			top: -20px;
+  			left: -20px;
+  			position: relative;
+		}
+
+		.company-card-soc-name{
+			font-size: 18px;
+  			vertical-align: top;
+		}
+
+		p{
+			margin: 0;
+		}
+
+	</style>
+
+</body>
+</html>
+
