@@ -2,26 +2,15 @@
 <html>
 <head>
 
-    <title></title>
+    <title>Mailse</title>
 
-    <meta name="viewport" content="width=device-width; initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/js/materialize.min.js"></script>
-
-
     {% load staticfiles %}
-
-    <script src="{% static 'waves.min.js' %}"></script>
-    <script src="{% static 'jquery.smooth-scroll.js' %}"></script>
-
-    <script src="http://malsup.github.com/jquery.form.js"></script> 
-
 
 </head>
 <body>
@@ -31,11 +20,11 @@
 
     <div class="container valign">
     
-        <h2 class="center-align" style="margin-bottom: 50px;">Find any email!</h2>
+        <h2 class="center-align" style="margin-bottom: 50px;">No longer waste your time looking for contact information.</h2>
 
         <div class="row">
-            <div class="col s4 offset-s4">
-                <input id="search_field" readonly placeholder="Alvin" type="text" class="validate">
+            <div class="col l4 offset-l4 s10">
+                <input id="search_field" readonly type="text" class="validate">
 
                 <!-- 
                 <a class="waves-effect waves-teal btn-flat"><i class="material-icons">search</i></a>
@@ -51,12 +40,11 @@
         </div>
 
     </div>
-
     </div>
         
-        <a style="position: absolute; bottom: 60px; right: 50px;" id="link-down" class="btn-floating btn-large waves-effect waves-light blue lighten-2" href="#last_name"><i class="fa fa-chevron-down"></i></a>
-
     </div> <!-- /.row -->
+
+    <a style="position: relative; bottom: 50px; right: 50px; float: right;" id="link-down" class="hide-on-med-and-down btn-floating btn-large waves-effect waves-light blue lighten-2" href="#id_fisrt_name"><i class="fa fa-chevron-down"></i></a>
 
     <div class="container">
         <div class="row">
@@ -67,14 +55,14 @@
                 <div class="row">
                 
                     {% for field in form %}
-                        <div class="person-form-field input-field col s6 offset-s3">
+                        <div class="person-form-field input-field col l6 offset-l3 s12 m10 offset-m1">
                             {{ field.errors }}
                             {{ field }}
                             {{ field.label_tag }}
                         </div>
                     {% endfor %}
 
-                    <div class="col s6 offset-s3">
+                    <div class="col l6 offset-l3 s12 m10 offset-m1">
                         <button type="submit" value="Create" class="waves-effect waves-light btn">Submit</button>
                     </div>
 
@@ -149,6 +137,14 @@
 
     </style>
 
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/js/materialize.min.js"></script>
+
+    <script src="{% static 'waves.min.js' %}"></script>
+    <script src="{% static 'jquery.smooth-scroll.js' %}"></script>
+    <script src="http://malsup.github.com/jquery.form.js"></script> 
+
     <script> 
         // wait for the DOM to be loaded 
         $(document).ready(function() { 
@@ -197,24 +193,13 @@
 
         $('#link-down').smoothScroll();
 
-
-        //Waves.attach('.search', ['waves-circle', 'waves-float']);
-
         Waves.attach('.search', ['waves-circle', 'waves-float']);
-
 
         var text = "TechCrunch.com";
         var n = 0;
 
         var options = {
             wait: 800, //ms
-            
-            /*
-            position: { // This position relative to HTML element.
-                x: 20, //px
-                y: 20  //px
-            },
-            */
         };
 
         function tick() {
@@ -243,19 +228,19 @@
 
         tick();
         writeStart();
-
-
-        var options = [ 
-            {selector: '#staggered-test', offset: 50, callback: 'Materialize.toast("This is our ScrollFire Demo!", 1500 )'}, 
-            {selector: '#staggered-test', offset: 205, callback: 'Materialize.toast("Please continue scrolling!", 1500 )' }, 
-            {selector: '#staggered-test', offset: 400, callback: 'Materialize.showStaggeredList("#staggered-test")' }, 
-            {selector: '#image-test', offset: 500, callback: 'Materialize.fadeInImage("#image-test")' } 
-        ];
-
-        Materialize.scrollFire(options);
-
     
     </script>
+
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-64063502-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
 
 </body>
 </html>

@@ -7,7 +7,9 @@ class Person(models.Model):
     fisrt_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
     company = models.CharField(max_length=50)
-    person_role = models.CharField(max_length=50)
+    your_role = models.CharField(max_length=50)
+
+    comment = models.TextField(blank=True, null=True)
 
     def __str__(self):
         return self.email
